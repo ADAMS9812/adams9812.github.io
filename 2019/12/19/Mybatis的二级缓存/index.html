@@ -6,16 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>初始Spring框架的AOP机制 | The blog of Adams</title>
+  <title>Mybatis的二级缓存 | The blog of Adams</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="但行好事，莫问前程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初始Spring框架的AOP机制">
+<meta property="og:title" content="Mybatis的二级缓存">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;19&#x2F;Mybatis%E7%9A%84%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98&#x2F;index.html">
 <meta property="og:site_name" content="The blog of Adams">
 <meta property="og:description" content="但行好事，莫问前程">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-19T09:27:19.095Z">
+<meta property="og:updated_time" content="2019-12-19T12:00:45.919Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="The blog of Adams" type="application/atom+xml">
@@ -173,7 +173,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      初始Spring框架的AOP机制
+      Mybatis的二级缓存
     </h1>
   
 
@@ -188,7 +188,7 @@
       
         <h4 id="但行好事，莫问前程"><a href="#但行好事，莫问前程" class="headerlink" title="但行好事，莫问前程"></a>但行好事，莫问前程</h4><a id="more"></a>
 
-<h3 id="二级缓存"><a href="#二级缓存" class="headerlink" title="二级缓存"></a><strong>二级缓存</strong></h3><p>&emsp;&emsp;Mybatis的二级缓存是指mapper映射文件。二级缓存的作用域是同一个namespace下的mapper映射文件内容，多个SqlSession共享。Mybatis需要手动设置启动二级缓存。<br><br>&emsp;&emsp;二级缓存是默认启用的(要生效需要对每个Mapper进行配置)，如想取消，则可以通过Mybatis配置文件中的元素下的子元素来指定cacheEnabled为false。<br></p>
+<h3 id="Mybatis的二级缓存"><a href="#Mybatis的二级缓存" class="headerlink" title="Mybatis的二级缓存"></a><strong>Mybatis的二级缓存</strong></h3><p>&emsp;&emsp;Mybatis的二级缓存是指mapper映射文件。二级缓存的作用域是同一个namespace下的mapper映射文件内容，多个SqlSession共享。Mybatis需要手动设置启动二级缓存。<br><br>&emsp;&emsp;二级缓存是默认启用的(要生效需要对每个Mapper进行配置)，如想取消，则可以通过Mybatis配置文件中的元素下的子元素来指定cacheEnabled为false。<br></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;settings&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  &lt;setting name&#x3D;&quot;cacheEnabled&quot; value&#x3D;&quot;false&quot; &#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;settings&gt;</span></pre></td></tr></table></figure>
 
 <p>&emsp;&emsp;cacheEnabled默认是启用的，只有在该值为true的时候，底层使用的Executor才是支持二级缓存的CachingExecutor。具体可参考Mybatis的核心配置类org.apache.ibatis.session.Configuration的newExecutor方法实现。<br>可以通过源码看看:</p>

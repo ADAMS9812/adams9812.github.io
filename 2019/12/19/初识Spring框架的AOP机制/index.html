@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="The blog of Adams">
 <meta property="og:description" content="但行好事，莫问前程">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-19T12:00:34.691Z">
+<meta property="og:updated_time" content="2019-12-19T12:06:22.278Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="The blog of Adams" type="application/atom+xml">
@@ -190,7 +190,7 @@
 
 <p> &emsp;&emsp;AOP是Spring框架面向切面的编程思想，AOP采用一种称为“横切”的技术，将涉及多业务流程的通用功能抽取并单独封装，形成独立的切面，在合适的时机将这些切面横向切入到业务流程指定的位置中。本篇结合实际案例详细讲述AOP的原理及实现过程。通过本篇的学习，可以达成如下目标。</p>
 <blockquote>
-<p>● 理解AOP的编程思想及原理<br><br>● 掌握AOP的实现技术<br></p>
+<p>● 理解AOP的编程思想及原理<br><br>● 掌握AOP的实现技术 <br></p>
 </blockquote>
 <p> &emsp;&emsp;Spring框架的AOP机制可以让开发者把业务流程中的通用功能抽取出来，单独编写功能代码。在业务流程执行过程中，Spring框架会根据业务流程要求，自动把独立编写的功能代码切入到流程的合适位置。</p>
 <p>  &emsp;&emsp;例如，在一个业务系统中，用户登录是基础功能，凡是涉及到用户的业务流程都要求用户进行系统登录。如果把用户登录功能代码写入到每个业务流程中，会造成代码冗余，维护也非常麻烦，当需要修改用户登录功能时，就需要修改每个业务流程的用户登录代码，这种处理方式显然是不可取的。比较好的做法是把用户登录功能抽取出来，形成独立的模块，当业务流程需要用户登录时，系统自动把登录功能切入到业务流程中。</p>
